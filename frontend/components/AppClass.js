@@ -125,7 +125,7 @@ export default class AppClass extends React.Component {
     for(let y = 1; y<=3; y++){
     for(let x = 1; x<=3; x++){
         const isActive = this.state.x === x && this.state.y === y
-        squares.push(<div className={isActive ? "square active" : "square"}>{isActive && "B"}</div>)
+        squares.push(<div className={isActive ? "square active" : "square"} key = {x + "," + y}>{isActive && "B"}</div>)
       }
     }
     return (
@@ -133,9 +133,6 @@ export default class AppClass extends React.Component {
         <div className="info">
           <h3 id="coordinates">Coordinates ({this.state.x}, {this.state.y})</h3>
           <h3 id="steps">{this.state.count === 1 ? `You moved ${this.state.count} time` : `You moved ${this.state.count} times`}</h3>
-
-          
-
         </div>
         <div id="grid">
           {squares}

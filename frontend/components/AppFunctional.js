@@ -12,7 +12,7 @@ export default function AppFunctional(props) {
   for (let yI = 1; yI <= 3; yI++) {
     for (let xI = 1; xI <= 3; xI++) {
       const isActive = x === xI && y === yI;
-      squares.push(<div className={isActive ? "square active" : "square"}>{isActive && "B"}</div>);
+      squares.push(<div className={isActive ? "square active" : "square"} key = {xI + "," + yI}>{isActive && "B"}</div>);
     }
   }
 
@@ -133,6 +133,7 @@ export default function AppFunctional(props) {
         sety(2)
         setCount(0)
         setError(null)
+        setEmail("")
         break;
     }
 
